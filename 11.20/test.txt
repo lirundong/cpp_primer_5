@@ -1,0 +1,14 @@
+C++ Primer Plus is a good book
+for beginbers.
+Quite a good book.
+C++: 1 times.
+Plus: 1 times.
+Primer: 1 times.
+Quite: 1 times.
+a: 2 times.
+beginbers.: 1 times.
+book: 1 times.
+book.: 1 times.
+for: 1 times.
+good: 2 times.
+is: 1 times.

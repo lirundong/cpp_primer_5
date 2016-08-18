@@ -1,0 +1,97 @@
+Caffe
+Caffe is a deep learning framework made with expression, speed, and modularity in mind. It is developed by the Berkeley Vision and Learning Center (BVLC) and by community contributors. Yangqing Jia created the project during his PhD at UC Berkeley. Caffe is released under the BSD 2-Clause license.
+
+Check out our web image classification demo!
+
+Why Caffe?
+Expressive architecture encourages application and innovation. Models and optimization are defined by configuration without hard-coding. Switch between CPU and GPU by setting a single flag to train on a GPU machine then deploy to commodity clusters or mobile devices.
+
+Extensible code fosters active development. In Caffe¡¯s first year, it has been forked by over 1,000 developers and had many significant changes contributed back. Thanks to these contributors the framework tracks the state-of-the-art in both code and models.
+
+Speed makes Caffe perfect for research experiments and industry deployment. Caffe can process over 60M images per day with a single NVIDIA K40 GPU*. That¡¯s 1 ms/image for inference and 4 ms/image for learning. We believe that Caffe is the fastest convnet implementation available.
+
+Community: Caffe already powers academic research projects, startup prototypes, and even large-scale industrial applications in vision, speech, and multimedia. Join our community of brewers on the caffe-users group and Github.
+
+* With the ILSVRC2012-winning SuperVision model and caching IO. Consult performance details.
+
+Documentation
+DIY Deep Learning for Vision with Caffe
+Tutorial presentation.
+Tutorial Documentation
+Practical guide and framework reference.
+arXiv / ACM MM ¡®14 paper
+A 4-page report for the ACM Multimedia Open Source competition (arXiv:1408.5093v1).
+Installation instructions
+Tested on Ubuntu, Red Hat, OS X.
+Model Zoo
+BVLC suggests a standard distribution format for Caffe models, and provides trained models.
+Developing & Contributing
+Guidelines for development and contributing to Caffe.
+API Documentation
+Developer documentation automagically generated from code comments.
+Examples
+
+ImageNet tutorial
+Train and test "CaffeNet" on ImageNet data.
+LeNet MNIST Tutorial
+Train and test "LeNet" on the MNIST handwritten digit data.
+CIFAR-10 tutorial
+Train and test Caffe on CIFAR-10 data.
+Fine-tuning for style recognition
+Fine-tune the ImageNet-trained CaffeNet on the "Flickr Style" dataset.
+Feature extraction with Caffe C++ code.
+Extract CaffeNet / AlexNet features using the Caffe utility.
+CaffeNet C++ Classification example
+A simple example performing image classification using the low-level C++ API.
+Web demo
+Image classification demo running as a Flask web server.
+Siamese Network Tutorial
+Train and test a siamese network on MNIST data.
+Notebook Examples
+
+Image Classification and Filter Visualization
+Instant recognition with a pre-trained model and a tour of the net interface for visualizing features and parameters layer-by-layer.
+Learning LeNet
+Define, train, and test the classic LeNet with the Python interface.
+Fine-tuning for Style Recognition
+Fine-tune the ImageNet-trained CaffeNet on new data.
+Off-the-shelf SGD for classification
+Use Caffe as a generic SGD optimizer to train logistic regression on non-image HDF5 data.
+Multilabel Classification with Python Data Layer
+Multilabel classification on PASCAL VOC using a Python data layer.
+Editing model parameters
+How to do net surgery and manually change model parameters for custom use.
+R-CNN detection
+Run a pretrained model as a detector in Python.
+Siamese network embedding
+Extracting features and plotting the Siamese network embedding.
+Citing Caffe
+Please cite Caffe in your publications if it helps your research:
+
+@article{jia2014caffe,
+  Author = {Jia, Yangqing and Shelhamer, Evan and Donahue, Jeff and Karayev, Sergey and Long, Jonathan and Girshick, Ross and Guadarrama, Sergio and Darrell, Trevor},
+  Journal = {arXiv preprint arXiv:1408.5093},
+  Title = {Caffe: Convolutional Architecture for Fast Feature Embedding},
+  Year = {2014}
+}
+If you do publish a paper where Caffe helped your research, we encourage you to update the publications wiki. Citations are also tracked automatically by Google Scholar.
+
+Contacting Us
+Join the caffe-users group to ask questions and discuss methods and models. This is where we talk about usage, installation, and applications.
+
+Framework development discussions and thorough bug reports are collected on Issues.
+
+Contact caffe-dev if you have a confidential proposal for the framework and the ability to act on it. Requests for features, explanations, or personal help will be ignored; post to caffe-users instead.
+
+The core Caffe developers offer consulting services for appropriate projects.
+
+Acknowledgements
+The BVLC Caffe developers would like to thank NVIDIA for GPU donation, A9 and Amazon Web Services for a research grant in support of Caffe development and reproducible research in deep learning, and BVLC PI Trevor Darrell for guidance.
+
+The BVLC members who have contributed to Caffe are (alphabetical by first name): Eric Tzeng, Evan Shelhamer, Jeff Donahue, Jon Long, Ross Girshick, Sergey Karayev, Sergio Guadarrama, and Yangqing Jia.
+
+The open-source community plays an important and growing role in Caffe¡¯s development. Check out the Github project pulse for recent activity and the contributors for the full list.
+
+We sincerely appreciate your interest and contributions! If you¡¯d like to contribute, please read the developing & contributing guide.
+
+Yangqing would like to give a personal thanks to the NVIDIA Academic program for providing GPUs, Oriol Vinyals for discussions along the journey, and BVLC PI Trevor Darrell for advice.
