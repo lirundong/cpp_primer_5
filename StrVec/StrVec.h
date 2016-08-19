@@ -21,7 +21,7 @@ public:
 	std::string* cbegin() const { return _elem; }
 	std::string* end() { return _first_free; }
 	std::string* cend() const { return _first_free; }
-	// add , remove or change elements:
+	// add, remove or change elements:
 	void push_back(const std::string &s);
 	StrVec& operator=(const StrVec &);
 private:
