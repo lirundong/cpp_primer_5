@@ -45,6 +45,13 @@ public:
 	// begin() and end()
 	StrBlobPtr begin();
 	StrBlobPtr end();
+	// operator[]
+	std::string &operator[](std::size_t n) {
+		return (*_data)[n];
+	}
+	const std::string &operator[](std::size_t n) const {
+		return (*_data)[n];
+	}
 
 	// Function: write or delete elements
 	void push_bask(const std::string &str_in) { _data->push_back(str_in); }
@@ -72,9 +79,51 @@ public:
 
 	// Function: read only
 	std::string &dref() const;  // de-referance *this
+	// operator * and ->
+	std::string &operator*() const {
+		auto p = check(_idx, "de - referance past end");
+		return (*p)[_idx];
+	}
+	std::string *operator->() const {
+		auto p = check(_idx, "de - referance past end");
+		return & this->operator*;
+	}
 
-								// Function: change instance
+	// Function: change instance
 	StrBlobPtr &incr();  // add _idx
+	// pre-operator ++ and --
+	StrBlobPtr &operator++() {
+		check(_idx, "increasement past end of StrBlobPtr");
+		++_idx;
+		return *this;
+	}
+	StrBlobPtr &operator--() {
+		--_idx;
+		check(_idx, "decreasement at begin of StrBlobPtr");
+		return *this;
+	}
+	// post-operator ++ and --, call pre-operator
+	StrBlobPtr operator++(int) {
+		StrBlobPtr back_up = *this;
+		++*this;
+		return back_up;
+	}
+	StrBlobPtr operator--(int) {
+		StrBlobPtr back_up = *this;
+		--*this;
+		return back_up;
+	}
+	// operator + and -
+	StrBlobPtr &operator+(int n) {
+		_idx += n;
+		check(_idx, "increasement past end of StrBlobPtr");
+		return *this;
+	}
+	StrBlobPtr &operator-(int n) {
+		_idx -= n;
+		check(_idx, "decreasement at begin of StrBlobPtr");
+		return *this;
+	}
 
 private:
 	std::size_t _idx;  // index in _data vector
