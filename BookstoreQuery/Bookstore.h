@@ -8,7 +8,7 @@
  */
 class Quote {
 public:
-	Quote(const std::string &isbn_, double price_ = 0.0) :
+	Quote(const std::string &isbn_ = "", double price_ = 0.0) :
 		isbn(isbn_), price(price_) { };
 
 	~Quote() { }
@@ -27,15 +27,39 @@ public:
 	}
 };
 
-class BulkQuote : public Quote {
+// Abstract Base Class:
+class VirtualQuote : public Quote {
 public:
 	// friends:
 	friend const double net_price(const Quote &q, std::size_t n);
 
 	// class-methods:
-	BulkQuote(const std::string &isbn_, double price_ = 0.0,
+	VirtualQuote(const std::string &isbn_ = "", double price_ = 0.0,
 		std::size_t thre = 0, double rate = 0.0) :
-		Quote(isbn_, price_), _thre(thre), _rate(rate) { }
+		Quote(isbn_, price_), _thre(thre), _rate(rate) {}
+
+	~VirtualQuote() {}
+
+	// pure-virtual function:
+	const double net_price(std::size_t) const override = 0;
+
+	int debug(std::ostream &os) const override = 0;
+
+protected:
+	std::size_t _thre;
+	double _rate;
+};
+
+// Class for discount enabled books:
+class BulkQuote : public VirtualQuote {
+public:
+	// friends:
+	friend const double net_price(const Quote &q, std::size_t n);
+
+	// class-methods:
+	BulkQuote(const std::string &isbn_ = "", double price_ = 0.0,
+		std::size_t thre = 0, double rate = 0.0) :
+		VirtualQuote(isbn_, price_, thre, rate) { }
 
 	~BulkQuote() { }
 
@@ -50,10 +74,6 @@ public:
 			<< "rate: " << _rate << std::endl;
 		return 0;
 	}
-
-protected:
-	std::size_t _thre;
-	double _rate;
 };
 
 /* FUNCTIONS:

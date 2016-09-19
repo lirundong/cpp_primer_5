@@ -9,6 +9,9 @@ int main() {
 		<< "Book on sale for 10:\t" << net_price(bookSale1, 10) << std::endl;
 
 #ifdef _DEBUG
+	// this will be a bug:
+	// VirtualQuote virtualBook();
+
 	book1.debug(std::cout);
 	bookSale1.debug(std::cout);
 #endif // _DEBUG
